@@ -862,7 +862,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			
     case remodel:
       returnvalue = effremodel(card, choice1, choice2, state, handPos, currentPlayer, i, j);
-      return 0;
+      return returnvalue;
 		
     case smithy:
       effsmithy(card, state, handPos, currentPlayer, i);
