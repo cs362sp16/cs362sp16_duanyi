@@ -1,0 +1,2 @@
+The five cards I implemented are adventurer, council_room, remodel, smithy and village, and the functions are effadventurer, effcouncil_room, effremodel, effsmithy and effvillage. I copied the code into each function and added the parameters according to the variables used in each function, the functions are called under their cases. Add a variable called returnvalue so it can catch the return value of effremodel. Also claimed the functions in dominion_helpers.h. Made two changes in those 5 functions so that there are 2 bugs.
+
