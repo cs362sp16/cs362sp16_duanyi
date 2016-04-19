@@ -11,5 +11,11 @@ int gainCard(int supplyPos, struct gameState *state, int toFlag, int player);
 int getCost(int cardNumber);
 int cardEffect(int card, int choice1, int choice2, int choice3, 
 	       struct gameState *state, int handPos, int *bonus);
-
+void effadventurer(int card, struct gameState *state, int handPos, 
+	int currentPlayer, int drawntreasure, int cardDrawn, int temphand[], int z);
+void effcouncil_room(int card, struct gameState *state, int handPos, int currentPlayer);
+int effremodel(int card, int choice1, int choice2, struct gameState *state, 
+	int handPos, int currentPlayer, int i, int j);
+void effsmithy(int card, struct gameState *state, int handPos, int currentPlayer, int i);
+void effvillage(int card, struct gameState *state, int handPos, int currentPlayer);
 #endif
