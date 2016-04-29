@@ -1,0 +1,6 @@
+The coverage is 47.07% of 563. Each unit test executed less than 5% of 563, and each card test executed 
+more than 20% of 563. Because for unit tests and card tests I only tested some simplest functions, 
+like the numHandCards and handCard funstions are basically just return the values and otheres only have some
+if statements to test, the coverage is low. A unit test is the smallest test you can write, but it can still 
+go wrong, so when a test fails maybe it's because the test is wrong, like I didn't realize the initial value of 
+g.handCount[0] is 5 and I forgot there is a discardCard at the end of each cardeffect function and case.
