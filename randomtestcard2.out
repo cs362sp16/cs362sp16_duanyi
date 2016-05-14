@@ -1,0 +1,86 @@
+GCOV After randomtestcard2
+Function 'updateCoins'
+Lines executed:100.00% of 11
+
+Function 'gainCard'
+Lines executed:61.54% of 13
+
+Function 'discardCard'
+Lines executed:84.62% of 13
+
+Function 'cardEffect'
+Lines executed:9.71% of 206
+
+Function 'effvillage'
+Lines executed:0.00% of 5
+
+Function 'effsmithy'
+Lines executed:100.00% of 5
+
+Function 'effremodel'
+Lines executed:0.00% of 11
+
+Function 'effcouncil_room'
+Lines executed:100.00% of 9
+
+Function 'effadventurer'
+Lines executed:100.00% of 15
+
+Function 'getCost'
+Lines executed:23.33% of 30
+
+Function 'drawCard'
+Lines executed:95.45% of 22
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+
+Function 'scoreFor'
+Lines executed:100.00% of 24
+
+Function 'isGameOver'
+Lines executed:100.00% of 10
+
+Function 'endTurn'
+Lines executed:100.00% of 20
+
+Function 'whoseTurn'
+Lines executed:100.00% of 2
+
+Function 'fullDeckCount'
+Lines executed:0.00% of 9
+
+Function 'supplyCount'
+Lines executed:100.00% of 2
+
+Function 'handCard'
+Lines executed:100.00% of 3
+
+Function 'numHandCards'
+Lines executed:100.00% of 2
+
+Function 'buyCard'
+Lines executed:76.92% of 13
+
+Function 'playCard'
+Lines executed:78.57% of 14
+
+Function 'shuffle'
+Lines executed:100.00% of 16
+
+Function 'initializeGame'
+Lines executed:95.16% of 62
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+
+Function 'newGame'
+Lines executed:0.00% of 3
+
+Function 'compare'
+Lines executed:100.00% of 6
+
+File 'dominion.c'
+Lines executed:48.31% of 563
+Creating 'dominion.c.gcov'
+
