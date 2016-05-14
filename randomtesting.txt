@@ -1,0 +1,8 @@
+I tested card adventurer, council_room and smithy, and all of these three card functions are 100% covered.  
+To make a random tester, I generated random players and random seed, and initialize the game with those random variables,  
+and then pass variables to the certain card methods. I didn’t randomly generate currently player or dranwtreasure or cardDrawn because even though they are variables, 
+they should have been defined instead cardEffect function. 
+The coverage is 48.31% of 563 according to gcov.
+It doesn’t take long to run the tests because it only loops 20 times each and the card methods are pretty simple. 
+Random tests get higher coverage, it executed 47.07% of 563 lines, and have better fault detection capability. 
+Random tests can generate different variables and try more possibilities compare to unit tests.
