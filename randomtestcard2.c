@@ -30,7 +30,7 @@ int main(int argc, char *argv[]){
 		g.whoseTurn = 1;
 		int i = 0;
 		effsmithy(smithy, &g, 1, 1, i);
-		//asserttrue(g.handCount[1], 2);
+		asserttrue(g.handCount[1], 2);
 }
 	return 0; 
 }
