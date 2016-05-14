@@ -29,9 +29,9 @@ int main(int argc, char *argv[]){
 		initializeGame(players, k, seed, &g);
 	  	g.whoseTurn = 0;
 		effcouncil_room(council_room, &g, 1, 0);
-		//asserttrue(g.handCount[0], 8);
-		//asserttrue(g.numBuys, 2);
-		//asserttrue(g.handCount[1], 1);
+		asserttrue(g.handCount[0], 8);
+		asserttrue(g.numBuys, 2);
+		asserttrue(g.handCount[1], 1);
 	}
 	
 
