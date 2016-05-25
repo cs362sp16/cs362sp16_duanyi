@@ -1,2 +1,4 @@
 I cannot difference between my results and my classmate's, I think it may be because that 
 we didn't change the dominion a lot, so they act similarly. We can get coverages above 60%. 
+Using differential testing you can know if they behave the same and if there is an error, 
+but it's hard to locate and need a lot of output to see where is the difference.
