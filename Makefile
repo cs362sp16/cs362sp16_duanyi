@@ -9,6 +9,12 @@ dominion.o: dominion.h dominion.c rngs.o
 playdom: dominion.o playdom.c
 	gcc -o playdom playdom.c -g dominion.o rngs.o $(CFLAGS)
 
+testdominion: dominion.o testdominion.c
+	gcc -o testdominion testdominion.c -g dominion.o rngs.o $(CFLAGS)
+	./testdominion 42 >> results.out
+	echo "GCOV After Playing a Game" >> results.out
+	gcov dominion.c >> results.out
+
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
 
@@ -89,8 +95,7 @@ randomtestadventurer.out: randomtestadventurer.c playdom
 	echo "GCOV After randomtestadventurer" >> randomtestadventurer.out
 	gcov -f dominion.c >> randomtestadventurer.out
 
-all: playdom player unittest cardtest unittestresults.out randomtestcard1 randomtestcard2 randomtestadventurer randomtestcard1.out randomtestcard2.out randomtestadventurer.out
+all: playdom player unittest cardtest unittestresults.out randomtestcard1 randomtestcard2 randomtestadventurer randomtestcard1.out randomtestcard2.out randomtestadventurer.out testdominion
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 randomtestcard1 randomtestcard2 randomtestadventurer player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so *.a *.dSYM
-
+	rm -f *.o playdom.exe playdom test.exe test player unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 randomtestcard1 randomtestcard2 randomtestadventurer player.exe testdominion testdominion.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so *.a *.dSYM
