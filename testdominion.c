@@ -25,8 +25,8 @@ int main (int argc, char** argv) {
   if(!argv[1])
     seed = 42;
   int k[10] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-  srand(time(NULL));
-  //srand(seed);
+  //srand(time(NULL));
+  srand(seed);
   int j = 0, h, kcard;
   for(j = 0; j < 10; j++){
     kcard = adventurer + rand() % 20;
