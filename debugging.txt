@@ -1,0 +1,62 @@
+There is a bug in my function void effvillage(int card, struct gameState *state, int handPos, int currentPlayer) 
+according to my cardtest5.c.
+I used gdb to debug the cardtest5. After running the program by (gdb) run, it displayed the test failed message; 
+then I set the break point at line 24, which call the cardEffect function. The test failed when I compared 
+g.numActions to 3, so there would be something wrong with g.numActions.
+The gdb ran until it hit the breakpoint, then I can use step to see how it works, and the results are:
+(gdb) step
+cardEffect (card=14, choice1=0, choice2=0, choice3=0, state=0x7fffffff7820, handPos=0, bonus=0x7fffffff77e0)
+    at dominion.c:747
+747	  int currentPlayer = whoseTurn(state);
+(gdb) step
+whoseTurn (state=0x7fffffff7820) at dominion.c:347
+347	  return state->whoseTurn;
+(gdb) step
+348	}
+(gdb) step
+cardEffect (card=14, choice1=0, choice2=0, choice3=0, state=0x7fffffff7820, handPos=0, bonus=0x7fffffff77e0)
+    at dominion.c:748
+748	  int nextPlayer = currentPlayer + 1;
+(gdb) step
+750	  int tributeRevealedCards[2] = {-1, -1};
+(gdb) step
+752	  int drawntreasure=0;
+(gdb) step
+754	  int z = 0;// this is the counter for the temp hand
+(gdb) step
+756	  if (nextPlayer > (state->numPlayers - 1)){
+(gdb) step
+762	  switch( card ) 
+(gdb) step
+872	      effvillage(card, state, handPos, currentPlayer);
+(gdb) step
+effvillage (card=14, state=0x7fffffff7820, handPos=0, currentPlayer=0) at dominion.c:731
+731	  drawCard(currentPlayer, state);
+(gdb) step
+drawCard (player=0, state=0x7fffffff7820) at dominion.c:528
+528	  if (state->deckCount[player] <= 0){//Deck is empty
+(gdb) step
+568	    int count = state->handCount[player];//Get current hand count for player
+(gdb) step
+574	    deckCounter = state->deckCount[player];//Create holder for the deck count
+(gdb) step
+575	    state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to the hand
+(gdb) step
+576	    state->deckCount[player]--;
+(gdb) step
+577	    state->handCount[player]++;//Increment hand count
+(gdb) step
+580	  return 0;
+(gdb) step
+581	}
+(gdb) step
+effvillage (card=14, state=0x7fffffff7820, handPos=0, currentPlayer=0) at dominion.c:734
+734	  state->numActions = state->numActions + 3;//bug
+The numActions was supposed to add 2 because that’s what car village should do, while it added 3. 
+I think that’s the bug that causes the test fail. After I changed the statement to 
+state->numActions = state->numActions + 2; the cardtest5 ran successfully.
+For Agan’s principle, I think rule no.1, no.5 and no.9 are applied here. No. 1 said that we should understand 
+the subject, which is true because to debug I have to understand the effvillage function and how it works 
+and how it should work. No.5 said that change one thing at a time, when I think that the bug may be at line 734, 
+I only changed that line, and then the test passed. After the test passed, I can be sure that the bug is at line 734, 
+so no.9 is applied.
