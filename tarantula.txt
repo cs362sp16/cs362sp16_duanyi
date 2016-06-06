@@ -1,0 +1,17 @@
+I wrote a shell script to implement tarantula, and it uses cardtest 1-5 since the unittests are mostly useless. 
+For each time it compiles the code and run the cardtest, so it can record the gcov after a certain test. 
+After running the cardtest, my tests output messages like “TEST SUCCESSFULLY COMPLETED” and “TEST FAILED”, 
+and I can tell if the test passed by searching the key word “FAILED” in the output. Then the shell script reads 
+each line of the gcov file, get the line number e and the if it was covered. It uses array failed[] and passed[] 
+to record times each line passed or failed, and variable totalfailed and totalpassed to track the total passed lines 
+and failed lines. Then I can apply the tarantula formula using these variables, it’s hard for shell script to calculate
+float number so I multiply failed[e] and passed[e] by 10000. After the script gets the suspiciousness of each line, 
+it reads the dominion.c and prints each line in different colors according to the suspiciousness.
+Then run the tarantula.sh, and check the output. Function effcouncil_room, effsmithy, case great_hall, 
+and case outpost are in green, which means that they are not covered by failed tests this time and not likely to be faulty. 
+Function compare, initializeGame, shuffle, some statements in function drawCard, function discardCard and function 
+updateCoins are in yellow, because they are covered by both the passed tests and failed tests, and a little suspicious. 
+Function whoseTurn, effvillage, and some statements in cardEffect are in red, which means their suspiciousness are 
+greater than 0.5 and they are very suspicious. If we print out the suspiciousness of whoseTurn and effvillage, 
+we can see that the suspiciousness of whoseTurn is 0.65, while the suspiciousness of effvillage is 1, so we can 
+almost be sure that the bug is located in function effvillage.
