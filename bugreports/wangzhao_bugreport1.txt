@@ -8,13 +8,4 @@ for (i = 0; i < 3; i++)
 The function should draw cards for 4 times while this for loop only runs for 3 times.
 This bug may affect the number of cards a player can have and may affect the score; 
 however, a player may not play this card at all. So it’s not fatal but important.
- 
-Bug ID: 2
-The bug is in the function function_renamed_smithy(state, currentPlayer, handPos);. 
-My input in the card test was cardEffect(smithy, 0, 0, 0, &g, 1, bonus); and g.whoseTurn = 1; 
-and the g.handCount[1] was supposed to be 2 after playing the card according to the Dominion rule, while it didn’t.
-The bug is in line 1327:
-1327: for (i = 0; i < 2; i++)
-it should draw 3 cards while the for loop only loops twice.
-This bug affects the action numbers and the number of cards a user draws; 
-however, there is a chance that the player never plays the smithy card, so it’s not so serious but still important.
+
